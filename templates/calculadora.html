@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <p> {{bloques}} </p>
+    <p> Secuencia de numeros {{bloques}} </p><br>
+    <p> convirtiendo en numeros {{transformar}}</p><br>
+    <p> resultado final {{resultado}} </p><br>
     <fieldset>
         <form action="{{url_for('calculadora')}}" method="POST">
             <input type="text" name="pantalla" value="0" readonly><br>
