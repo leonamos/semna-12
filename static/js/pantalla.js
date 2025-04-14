@@ -10,3 +10,4 @@ function limpiar(valor) {
         pantalla.value = '0';
     }
 }
+

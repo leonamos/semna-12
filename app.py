@@ -1,17 +1,18 @@
 from flask import Flask, render_template, request
-
+from operacion import separar
 app = Flask(__name__)
 
 saludo = "Bienvenido esto es una calculadora realizada con Flask  en python"
-
 @app.route('/')
 def index():
     return render_template('index.html', saludo=saludo)
 
 @app.route('/calculadora' , methods=['GET', 'POST'])
 def calculadora():
-    instrucciones = "Calculadora simple"
-    return render_template('calculadora.html', instrucciones=instrucciones)
+    operacion = request.form.get('pantalla')
+    bloques = separar(operacion)
+    print(bloques)
+    return render_template('calculadora.html', bloques=bloques)
 
 
 
