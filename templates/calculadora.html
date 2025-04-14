@@ -25,8 +25,8 @@
             <input type="button" name="multiplicacion" value="*" onclick="agregar('*')"><br>
             <input type="button" name="division" value="/" onclick="agregar('/')">
             <input type="button" name="punto" value="." onclick="agregar('.')"><br>
-            <input type="button" name="igual" value="=">
-            <input type="button" name="borrar" value="C">
+            <input type="button" name="igual" value="=" >
+            <input type="button" name="borrar" value="C" onclick="limpiar('C')"><br>
         </form>
     </fieldset>
     <script src="{{url_for('static', filename='js/pantalla.js')}}"></script>
