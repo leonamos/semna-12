@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from operacion import separar
+from operacion import separar, numeros
 app = Flask(__name__)
 
 saludo = "Bienvenido esto es una calculadora realizada con Flask  en python"
@@ -11,7 +11,8 @@ def index():
 def calculadora():
     operacion = request.form.get('pantalla')
     bloques = separar(operacion)
-    print(bloques)
+    
+    
     return render_template('calculadora.html', bloques=bloques)
 
 

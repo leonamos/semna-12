@@ -11,3 +11,10 @@ function limpiar(valor) {
     }
 }
 
+function retroceder(valor) {
+if( valor == "D") {
+    const pantalla = document.querySelector("input[name='pantalla']");
+    pantalla.value = pantalla.value.slice(0, -1)
+}
+
+}
