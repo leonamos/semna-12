@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
 </head>
 
 <body>
-    <p> Secuencia de numeros {{bloques}} </p><br>
     <p> convirtiendo en numeros {{transformar}}</p><br>
-    <p> resultado final {{resultado}} </p><br>
     <fieldset>
         <form action="{{url_for('calculadora')}}" method="POST">
-            <input type="text" name="pantalla" value="0" readonly><br>
+            <input type="text" name="pantalla" onclick="inicio()" readonly><br>
             <input type="button" name="num1" value="1" onclick="agregar('1') ">
             <input type="button" name="num1" value="2" onclick="agregar('2') ">
             <input type="button" name="num1" value="3" onclick="agregar('3') "><br>
@@ -29,7 +29,7 @@
             <input type="button" name="multiplicacion" value="*" onclick="agregar('*')">
             <input type="button" name="division" value="/" onclick="agregar('/')">
             <input type="button" name="punto" value="." onclick="agregar('.')"><br>
-            <input type="submit" name="igual" value="=" >
+            <input type="submit" name="igual" value="="  >
             <input type="button" name="delete" value="D" onclick="retroceder('D')">
             <input type="button" name="borrar" value="C" onclick="limpiar('C')"><br>
         </form>

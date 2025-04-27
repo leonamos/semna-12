@@ -11,7 +11,7 @@ def numeros(bloque):
     segmento= []
     for bloques in bloque:
         if bloques.isnumeric():
-            segmento.append(int(bloques))
+            segmento.append(float(bloques))
         else:
             segmento.append(bloques)
     return segmento
@@ -19,26 +19,37 @@ def numeros(bloque):
 
 def operar(bloque):
     if not isinstance(bloque, list):
-        raise typeError("El argumento debe ser una lista")
+        raise TypeError("El argumento debe ser una lista")
 
     i = 0
     while i < len (bloque):
         if bloque[i] == "*":
-            resultado = bloque[i - 1] * bloque[i + 1]
-            bloque[i - 1:i + 2] = [resultado]
-            i -= 1
+            if isinstance(bloque[i-1],(int,float)) and isinstance(bloque[i+1],(int,float)):
+                resultado = bloque[i - 1] * bloque[i + 1]
+                bloque[i - 1:i + 2] = [resultado]
+                i -= 1
+                print(resultado)
         elif bloque[i] == "/":
-            resultado = bloque[i - 1] / bloque[i + 1]
-            bloque[i - 1:i + 2] = [resultado]
-            i -= 1
+            if isinstance(bloque[i-1],(int,float)) and isinstance(bloque[i+1],(int,float)):
+                resultado = bloque[i - 1] / bloque[i + 1]
+                bloque[i - 1:i + 2] = [resultado]
+                i -= 1
+                print(resultado)
         elif bloque[i] == "+":
-            resultado = bloque[i - 1] + bloque[i + 1]
-            bloque[i - 1:i + 2] = [resultado]
-            i -= 1
+            if isinstance(bloque[i-1],(int,float)) and isinstance(bloque[i+1],(int,float)):
+                resultado = bloque[i - 1] + bloque[i + 1]
+                bloque[i - 1:i + 2] = [resultado]
+                i -= 1
+                print(resultado)
         elif bloque[i] == "-":
-            resultado = bloque[i - 1] - bloque[i + 1]
-            bloque[i - 1:i + 2] = [resultado]
-            i -= 1
+            if isinstance(bloque[i-1],(int,float)) and isinstance(bloque[i+1],(int,float)):
+                resultado = bloque[i - 1] - bloque[i + 1]
+                bloque[i - 1:i + 2] = [resultado]
+                i -= 1
+                print(resultado)
         i += 1
-      
     return bloque
+
+
+
+

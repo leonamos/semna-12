@@ -13,8 +13,8 @@ def calculadora():
     operacion = request.form.get('pantalla')
     bloques = separar(operacion)
     transformar = numeros(bloques)
-    respaldo = transformar.copy()
-    resultado = operar(respaldo)
+    resultado = operar(transformar)
+    print(resultado)
     return render_template(
         'calculadora.html',
         bloques=bloques,  
