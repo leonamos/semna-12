@@ -1,28 +1,19 @@
 function agregar(valor) {
-    const pantalla = document.querySelector("input[name='pantalla']");
+    const pantalla = document.getElementById('pantalla');
     pantalla.value += valor;
 }
 
-function limpiar(valor) {
-    const pantalla = document.querySelector("input[name='pantalla']");
-    if (valor == 'c' || valor == 'C') { 
-        pantalla.value = '0';
-    }
+function limpiar() {
+    const pantalla = document.getElementById('pantalla');
+    pantalla.value = '';
 }
 
-function retroceder(valor) {
-if( valor == "D") {
-    const pantalla = document.querySelector("input[name='pantalla']");
-    pantalla.value = pantalla.value.slice(0, -1)
-}
-}
-function inicio(valor) {
-    const pantalla = document.querySelector("input[name='pantalla']");
-    if(pantalla == null || pantalla ==[]){
-        pantalla.value = null;
+function calcular() {
+    const pantalla = document.getElementById('pantalla');
+    try {
+        const resultado = eval(pantalla.value);
+        pantalla.value = resultado;
+    } catch (error) {
+        pantalla.value = 'Error';
     }
-    if(pantalla != null || pantalla !=[]){
-        pantalla.value += valor
-    }
-
 }

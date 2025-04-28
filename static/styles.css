@@ -1,0 +1,81 @@
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+fieldset {
+    border: none;
+    padding: 20px;
+    background: #1c1c1c;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 260px;
+    height: 60px;
+    font-size: 2rem;
+    text-align: right;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #333;
+    color: white;
+    padding-right: 10px;
+}
+
+/* Ajustar el contenedor de los botones */
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 65px); /* 4 columnas */
+    grid-gap: 10px; /* Espaciado entre botones */
+    justify-content: center;
+}
+
+/* Estilo para los botones */
+input[type="button"], input[type="submit"] {
+    width: 65px;
+    height: 65px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px; /* Cambiar a bordes redondeados */
+    background: #505050;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover {
+    background: #666;
+}
+
+/* Botones de operadores */
+.operador {
+    background: #ff9500;
+    color: white;
+}
+
+/* Botones de control (C, etc.) */
+.control {
+    background: #a5a5a5;
+    color: black;
+}
+
+/* Botón de igual */
+.igual {
+    grid-column: span 4; /* Ocupa toda la fila */
+    background: #28a745;
+    color: white;
+    font-size: 1.8rem;
+}
