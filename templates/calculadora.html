@@ -6,11 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333; /* Fondo oscuro para resaltar el texto blanco */
+        }
+        p {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px; /* Espacio entre el texto y la calculadora */
+            text-align: center;
+        }
+        fieldset {
+            border: none;
+        }
+    </style>
 </head>
 
 <body>
-    <p> convirtiendo en numeros {{transformar}}</p><br>
+    <p>Calculadora</p>
     <fieldset>
         <form action="{{url_for('calculadora')}}" method="POST">
             <input type="text" name="pantalla" id="pantalla" readonly>

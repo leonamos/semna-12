@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 20px; /* Espacio entre el texto y el botón */
+        }
+        a {
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <p >{{saludo}}<p>
-    <a href="{{url_for('calculadora')}}"> Calcular</a>
-
-    
+    <p>{{saludo}}</p>
+    <a href="{{url_for('calculadora')}}">Calcular</a>
 </body>
 </html>
